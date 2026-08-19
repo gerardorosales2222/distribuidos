@@ -109,24 +109,3 @@ En una arquitectura de **microservicios**, la aplicación se divide en un conjun
   * Se necesita flexibilidad tecnológica y escalabilidad horizontal selectiva.
 
 ---
-
-## Caso Práctico: Sistema para Consultorio Médico
-
-Como ejercicio aplicativo, consideremos un sistema de gestión para un **consultorio médico** enfocado en administrar la interacción entre pacientes y sus turnos asociados.
-
-```
-                  +--------------------------------+
-                  |  Microservicio de Pacientes    |
-                  |  - Operaciones CRUD            |
-                  |  - Datos personales e historia |
-                  +---------------+----------------+
-                                  |
-                                  | Consumo /
-                                  | Interconexión REST
-                                  v
-                  +--------------------------------+
-                  |  Microservicio de Turnos       |
-                  |  - Alta y asignación de citas  |
-                  |  - Validación de agendas       |
-                  +--------------------------------+
-```
