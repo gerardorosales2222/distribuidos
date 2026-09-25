@@ -18,7 +18,7 @@ Para dar inicio al desarrollo, ingrese al sitio web start.spring.io y configure 
 
 **Java:** 17 (o la versión correspondiente al entorno de trabajo configurado)
 
-![Captura de Inicializr](../producto/src/main/resources/static/01initializr.jpg)
+![Captura de Inicializr](https://github.com/gerardorosales2222/distribuidos/blob/main/01%20Microservicios/producto/src/main/resources/static/img/01initializr.jpg)
 
 ### Dependencias requeridas: 
 En el panel lateral derecho, proceda a seleccionar las siguientes 5 dependencias:   
@@ -49,7 +49,7 @@ src/
                     └── ProductoApplication.java
 ```
 
-![Estructura sin paquetes](../producto/src/main/resources/static/02sinPaquetes.jpg)
+![Estructura sin paquetes](https://github.com/gerardorosales2222/distribuidos/blob/main/01%20Microservicios/producto/src/main/resources/static/img/02sinPaquetes.jpg)
 
 # 3. Creación de la Estructura de Paquetes
 Con la finalidad de respetar estrictamente la arquitectura en capas (Controller → Service → Repository → DB), es necesario crear 4 paquetes dentro de la ruta principal com.distribuido.producto:
@@ -79,7 +79,7 @@ com.distribuido.producto/
 └── ProductoApplication.java
 ```
 
-![Estructura sin paquetes](../producto/src/main/resources/static/03conPaquetes.jpg)
+![Estructura con paquetes](https://github.com/gerardorosales2222/distribuidos/blob/main/01%20Microservicios/producto/src/main/resources/static/img/03conPaquetes.jpg)
 
 # 4. Creación de la Entidad Producto.java
 Vamos a empezar con el modelado de **Producto**, la clase Producto.java debe estar en el paquete Model.
@@ -129,10 +129,11 @@ src/main/resources/application.properties
 ```
 Dentro de dicho archivo, incorpore las siguientes líneas de configuración:
 
->Properties
->server.port = 9001
->spring.jpa.hibernate.ddl-auto=update
->spring.datasource.url=jdbc:mysql://localhost:3306/>servicio_productos?serverTimezone=UTC
->spring.datasource.username=root
->spring.datasource.password=
->spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+```plaintext
+server.port = 9001
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/>servicio_productos?serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+```
