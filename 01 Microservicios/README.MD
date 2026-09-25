@@ -132,8 +132,7 @@ Dentro de dicho archivo, incorpore las siguientes líneas de configuración:
 ```plaintext
 server.port = 9001
 spring.jpa.hibernate.ddl-auto=update
-spring.datasource.url=jdbc:mysql://localhost:3306/>servicio_productos?serverTimezone=UTC
+spring.datasource.url=jdbc:mysql://localhost:3306/servicio_productos?serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=
-spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 ```
