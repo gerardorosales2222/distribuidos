@@ -9,7 +9,8 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 public class Producto {
     @Id
@@ -33,11 +34,9 @@ public class Producto {
 --------------------------------------------------------------------------------
 
 
+        package repository;
 
-
-package repository;
-
-import model.Producto;
+import com.distribuidos.producto.model.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -48,8 +47,7 @@ public interface IProductoRepository extends JpaRepository<Producto, Long> {
 --------------------------------------------------------------------------------
 
 
-
-import org.springframework.stereotype.Service;
+        import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -57,7 +55,7 @@ import java.util.List;
 public interface IProductoService {
 
     public List<Producto> getProductos();
-    
+
     public void saveProducto(Producto prod);
 
 }
@@ -65,18 +63,17 @@ public interface IProductoService {
 --------------------------------------------------------------------------------
 
 
+        package service;
 
-package service;
-
-import model.Producto;
+import com.distribuidos.producto.model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.IProductoRepository;
+import com.distribuidos.producto.repository.IProductoRepository;
 
 import java.util.List;
 
 @Service
-public class ProductoService implements IProductoService{
+public class ProductoService implements IProductoService {
 
     @Autowired
     private IProductoRepository repoProducto;
@@ -94,15 +91,15 @@ public class ProductoService implements IProductoService{
 
 --------------------------------------------------------------------------------
 
-package controller;
+        package controller;
 
-import model.Producto;
+import com.distribuidos.producto.model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import service.IProductoService;
+import com.distribuidos.producto.service.IProductoService;
 
 import java.util.List;
 
@@ -113,13 +110,13 @@ public class ProductoController {
     private IProductoService serviceProd;
 
     @PostMapping("/productos/crear")
-    public String crearProducto(@RequestBody Producto prod){
+    public String crearProducto(@RequestBody Producto prod) {
         serviceProd.saveProducto(prod);
         return "Dado de alta OK";
     }
 
     @GetMapping("/productos/listar")
-    public List<Producto> getProducto(){
+    public List<Producto> getProducto() {
         return serviceProd.getProductos();
     }
 

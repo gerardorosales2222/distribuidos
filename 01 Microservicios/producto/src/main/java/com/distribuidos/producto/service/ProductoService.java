@@ -1,9 +1,9 @@
-package service;
+package com.distribuidos.producto.service;
 
-import model.Producto;
+import com.distribuidos.producto.model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.IProductoRepository;
+import com.distribuidos.producto.repository.IProductoRepository;
 
 import java.util.List;
 

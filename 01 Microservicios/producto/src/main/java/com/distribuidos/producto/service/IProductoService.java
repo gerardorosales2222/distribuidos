@@ -1,7 +1,6 @@
-package service;
+package com.distribuidos.producto.service;
 
-import model.Producto;
-import org.springframework.stereotype.Service;
+import com.distribuidos.producto.model.Producto;
 
 import java.util.List;
 
